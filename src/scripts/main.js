@@ -13,7 +13,6 @@ plantSeeds(yearlyPlan)
 const field = usePlants();
 
 const food = harvestPlants(field); 
-console.log(food)
 
 food.sort((a,b) => {
     if (a.type < b.type) {

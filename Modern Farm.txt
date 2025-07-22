@@ -1,0 +1,32 @@
+title Modern Farm
+
+main.js->plan.js:Invoke createPlan() and assign to yearlyPlan
+plan.js-->main.js:Return a 3x6 matrix of crops
+note right of main.js: Log welcome message
+main.js->tractor.js: Invoke plantSeeds(), with param: yearlyPlan
+loop Loop over each item in matrix invoking the appropraite function based on type property
+tractor.js->asparagus.js: Invoke createAsparagus()
+asparagus.j-->tractor.js: Return seed object
+tractor.js->corn.js: Invoke createCorn()
+corn.js-->tractor.js: Return seed object
+tractor.js->potato.js: Invoke createPotato()
+potato.js-->tractor.js: Return seed object
+tractor.js->soybean.js:Invoke createSoybean()
+soybean.js-->tractor.js: Return seed object
+tractor.js->sunflower.js:Invoke createSunflower()
+sunflower.js-->tractor.js: Return seed object
+tractor.js->wheat.js:Invoke createWheat()
+wheat.js-->tractor.js: Return seed object
+tractor.js->field.js: Invoke addPlant() with returned seedObject
+note left of field.js: Add seedObject (x2 if corn) to field Array
+end
+main.js->field.js: Invoke usePlants() and assign to field
+field.js-->main.js: Return an array of seed objects
+main.js->harvester.js: Invoke harvestPlants() with param: field and assign to food
+harvester.js-->main.js: Return an array of seed objects with updated outputs, icons, and ids. 
+note right of main.js: Sort the returned objects alphabetically by type
+main.js->catalog.js: Invoke catalog() with param: food
+note left of catalog.js: Create an html table listing types of crops, amounts harvested, and an emoji icon and pass to DOM. 
+
+
+

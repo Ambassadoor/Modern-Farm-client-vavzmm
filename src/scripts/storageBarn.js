@@ -1,6 +1,6 @@
 export const barn = () => {
+    const inventory = []
     return {
-        inventory: [],
         push: (item) => {
             return inventory.push(item)
         },
@@ -8,10 +8,13 @@ export const barn = () => {
             return inventory.pop()
         },
         peek: () => {
-            return inventory.peek()
+            return inventory[inventory.length - 1]
         },
         isEmpty: () => {
-            return inventory.isEmpty()
+            return inventory.length === 0
+        },
+        get: () => {
+            return inventory
         }
     }     
 }

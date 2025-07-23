@@ -14,7 +14,10 @@ const field = usePlants();
 
 const food = harvestPlants(field); 
 
-food.sort((a,b) => {
+const foodArray = food.get()
+
+
+foodArray.sort((a,b) => {
     if (a.type < b.type) {
         return -1
     }
@@ -26,5 +29,5 @@ food.sort((a,b) => {
 
 
 
-Catalog(food)
+Catalog(foodArray)
 

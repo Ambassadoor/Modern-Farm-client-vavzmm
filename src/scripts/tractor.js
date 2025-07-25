@@ -6,20 +6,24 @@ import { createSunflower } from "./seeds/sunflower.js";
 import { createWheat } from "./seeds/wheat.js";
 import { addPlant } from "./field.js";
 
-export const plantSeeds = (plan) => {
-    const seedFunctions = {
-        "Asparagus": createAsparagus(),
-        "Corn": createCorn(),
-        "Potato": createPotato(),
-        "Soybean": createSoybean(),
-        "Sunflower": createSunflower(),
-        "Wheat": createWheat(),
+const createSeed = (seed) => {
+    const seedMap = {
+        Asparagus: createAsparagus,
+        Corn: createCorn,
+        Potato: createPotato,
+        Soybean: createSoybean,
+        Sunflower: createSunflower,
+        Wheat: createWheat
+        }
+
+    return seedMap[seed]();
     }
 
-    for (let row of plan) {
-        for (let food of row) {
-            let seed = seedFunctions[food]
-            addPlant(seed);
-        }
-    }
+export const plantSeeds = (plan) => {
+
+    const flatPlan = plan.flat();
+
+    flatPlan.forEach((seed) => {
+        addPlant(createSeed(seed))
+    })
 }

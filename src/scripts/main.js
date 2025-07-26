@@ -21,7 +21,7 @@ const foodArray = food.get()
 
 const processedGoods = {
     "Soybean" : "Bean Paste",
-    "Corn": "Corn mean",
+    "Corn": "Corn meal",
     "Sunflower": "Sunflower oil",
     "Asparagus": "Pickled asparagus",
     "Wheat" : "Flour",
